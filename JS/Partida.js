@@ -11,6 +11,10 @@ window.onload = function() {
     var vezAtual         = "X"; // X começa jogando
 
     function jogar(indexPJ, indexTile) {
+        if(jogo.completo == true){
+            exibirMensagem("Jogo Finalizado");
+            return;
+        }
         if (!isJogoDisponivel(indexPJ)) {
             exibirMensagem("Jogo Indisponível");
             return;
@@ -81,6 +85,7 @@ window.onload = function() {
         } else {
             tabuleiro.classList.add("empate-geral");
         }
+        jogo.completo = true;
     }
 
     function passarVez(indexTile) {
@@ -122,3 +127,4 @@ window.onload = function() {
     // Exponha a função jogar globalmente, ou conecte-a a eventos de clique:
     window.jogarNoPequeno = jogar;
 };
+
