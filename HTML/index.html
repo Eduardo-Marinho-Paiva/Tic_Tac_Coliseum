@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TIC TAC COLISEUM</title>
+    <link rel="stylesheet" href="../CSS/mapa.css">
+</head>
+
+<body>
+    <section>
+        <div id="grande-jogo">
+            <!-- Importar como Módulo -->
+            <script src="../JS/Partida.js" type="module"></script>
+            <script>
+                const grandeJogo = document.getElementById('grande-jogo');
+
+                for (let i = 0; i <= 8; i++) {
+                    const pequenoJogo = document.createElement('div');
+                    pequenoJogo.classList.add('pequeno-jogo');
+
+                    for (let j = 0; j <= 8; j++) {
+                        const tile = document.createElement('div');
+                        tile.classList.add('tile', 'neutro');
+                        tile.setAttribute('onclick', `jogarNoPequeno(${i}, ${j})`);
+                        pequenoJogo.appendChild(tile);
+                    }
+
+                    grandeJogo.appendChild(pequenoJogo);
+                }
+            </script>
+
+        </div>
+    </section>
+
+</body>
+
+</html>

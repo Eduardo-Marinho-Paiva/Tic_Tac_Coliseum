@@ -1,0 +1,137 @@
+/* Centralização e estilo do grande jogo */
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f2f5;
+}
+
+#grande-jogo {
+  width: 60vw;
+  height: 80vh;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  outline: 2px solid #ccc;
+  background-color: #fff;
+  padding: 10px;
+}
+
+/* Estilo dos pequenos jogos */
+.pequeno-jogo {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 2px;
+  border-radius: 10px;
+  position: relative;
+}
+
+/* Estilo dos quadrados internos */
+.tile {
+  background-color: #bac5d1; /* cinza azulado */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1.2em;
+  user-select: none;
+  border-radius: 2px;
+}
+
+/* Classes de estado */
+.neutro {
+  background-color: #a4acb5; /* cinza azulado */
+}
+
+.jogadorX {
+  background-color: rgba(255, 0, 0, 0.3);
+}
+
+.jogadorO {
+  background-color: rgba(0, 0, 255, 0.3);
+}
+
+/* Vitória do jogador X */
+.vitoriaX {
+  background-color: rgba(255, 0, 0, 0.2);
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-size="80" fill="red">X</text></svg>');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 60%;
+}
+
+/* Vitória do jogador O */
+.vitoriaO {
+  background-color: rgba(0, 0, 255, 0.2);
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-size="80" fill="blue">O</text></svg>');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 60%;
+}
+
+
+/* Vitória geral do jogador X */
+.vitoria-geralX {
+  background-color: rgba(255, 0, 0, 0.2);
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-size="120" fill="red">X</text></svg>');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 60%;
+  border-radius: 20px;
+}
+
+/* Vitória geral do jogador O */
+.vitoria-geralO {
+  background-color: rgba(0, 0, 255, 0.2);
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-size="120" fill="blue">O</text></svg>');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 60%;
+  border-radius: 20px;
+}
+
+/* Empate em um pequeno-jogo */
+.empate {
+  background-color: rgba(245, 222, 179, 0.4); /* bege transparente */
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><polygon points='50,20 80,80 20,80' fill='none' stroke='darkgoldenrod' stroke-width='5'/></svg>");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 60%;
+  border-radius: 10px;
+}
+
+/* Empate geral no grande-jogo */
+.empate-geral {
+  background-color: rgba(245, 222, 179, 0.4); /* bege transparente */
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><polygon points='50,20 80,80 20,80' fill='none' stroke='darkgoldenrod' stroke-width='5'/></svg>");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 60%;
+  border-radius: 20px;
+}
+
+.mensagem {
+  position: absolute;
+  top: 40px; /* distância do topo */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #ffa733; /* laranja vibrante */
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  text-align: center;
+  max-width: 80%;
+}
